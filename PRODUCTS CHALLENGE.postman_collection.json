@@ -1,0 +1,275 @@
+{
+  "info": {
+    "_postman_id": "713b2f75-1dba-4160-9266-2df99f5c9c96",
+    "name": "PRODUCTS CHALLENGE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31177511"
+  },
+  "item": [
+    {
+      "name": "PRODUCT",
+      "item": [
+        {
+          "name": "2xx",
+          "item": [
+            {
+              "name": "[POST] Create new product",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Zapatillas deportivas\",\r\n  \"description\": \"Modelo 2025 edición limitada\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "4xx",
+          "item": [
+            {
+              "name": "[POST] Create new product BAD REQUEST",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"description\": \"Modelo 2025 edición limitada\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PRICE",
+      "item": [
+        {
+          "name": "2xx Copy",
+          "item": [
+            {
+              "name": "[POST] Add price to product",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"priceValue\": 100.45,\r\n  \"initDate\": \"2027-04-15\",\r\n  \"endDate\": \"2027-04-17\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/3/prices",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "3",
+                    "prices"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "[GET] Price for date",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/1/prices?date=2025-01-01",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "1",
+                    "prices"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2025-01-01"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "[GET] Price Record",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/1/prices/record",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "1",
+                    "prices",
+                    "record"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "4xx Copy",
+          "item": [
+            {
+              "name": "[POST] Add price to product BAD REQUEST",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"priceValue\": 100.45,\r\n  \"initDate\": \"2025-01-02\",\r\n  \"endDate\": \"2025-01-06\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/1/prices",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "1",
+                    "prices"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "[POST] Add price to product BAD REQUEST",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"priceValue\": 100.45,\r\n  \"initDate\": \"2027-04-16\",\r\n  \"endDate\": \"2027-04-15\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/3/prices",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "3",
+                    "prices"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "[GET] Price for date NOT FOUND",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/1/prices?date=2024-04-15",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "1",
+                    "prices"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2024-04-15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "[GET] Price Record NOT FOUND",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/25/prices/historic",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "products",
+                    "25",
+                    "prices",
+                    "historic"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
